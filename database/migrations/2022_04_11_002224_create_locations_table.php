@@ -14,7 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('locations', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('street');
+            $table->string('number');
+            $table->string('district');
+            $table->string('city');
+            $table->string('state');
+            $table->string('zipcode');
+            $table->string('observation');
             $table->timestamps();
         });
     }
