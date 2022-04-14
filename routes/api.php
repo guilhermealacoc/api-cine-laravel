@@ -19,8 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::Get('buscatodosfilme', [MovieController::class, 'index']);
-Route::Get('buscaumfilme', [MovieController::class, 'show']);
-Route::Post('cadastrafilme', [MovieController::class, 'store']);
-Route::Post('atualizafilme', [MovieController::class, 'update']);
-Route::Post('excluifilme', [MovieController::class, 'destroy']);
+Route::get('buscatodosfilme', [MovieController::class, 'index']);
+Route::get('buscaumfilme/{id}', [MovieController::class, 'show']);
+Route::post('cadastrafilme', [MovieController::class, 'store']);
+Route::put('atualizafilme/{id}', [MovieController::class, 'update']);
+Route::delete('excluifilme/{id}', [MovieController::class, 'destroy']);

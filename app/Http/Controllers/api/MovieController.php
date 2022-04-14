@@ -55,7 +55,7 @@ class MovieController extends Controller
     {
         //Exibe um unico registro de filme do banco
         $movie = Movie::findOrFail($id);
-        return new MovieResource($movie);
+        return new MovieResources($movie);
     }
 
     /**
@@ -69,7 +69,6 @@ class MovieController extends Controller
     {
         //Atualiza um registro de um filme no banco
         $movie = Movie::findOrFail($id);
-        $movie = new Movie();
         $movie->title = $request->input('title');
         $movie->description = $request->input('description');
         $movie->duration = $request->input('duration');
@@ -79,7 +78,7 @@ class MovieController extends Controller
         $movie->Genre = $request->input('genre');
         $movie->save();
 
-        return new MovieResource($movie);
+        return new MovieResources($movie);
     }
 
     /**
@@ -93,7 +92,7 @@ class MovieController extends Controller
         //Deleta um registro de filme do banco
         $movie = Movie::findOrFail($id);
         if($movie->delete()){
-           return new MovieResource($movie);
+           return new MovieResources($movie);
         }
     }
 }
