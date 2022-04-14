@@ -42,7 +42,7 @@ class MovieController extends Controller
         $movie->Genre = $request->input('genre');
         $movie->save();
 
-        return new MovieResource($movie);
+        return new MovieResources($movie);
     }
 
     /**
