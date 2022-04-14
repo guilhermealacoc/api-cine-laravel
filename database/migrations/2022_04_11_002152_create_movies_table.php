@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('duration');
             $table->string('language');
             $table->string('releaseDate');
-            $table->string('Country');
-            $table->string('Genre');
+            $table->string('country');
+            $table->string('genre');
             $table->timestamps();
         });
     }
