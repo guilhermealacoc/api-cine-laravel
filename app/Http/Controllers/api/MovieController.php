@@ -34,6 +34,7 @@ class MovieController extends Controller
         //Faz o cadastro de um filme
         $movie = new Movie();
         $movie->title = $request->input('title');
+        $movie->director = $request->input('director');
         $movie->description = $request->input('description');
         $movie->duration = $request->input('duration');
         $movie->language = $request->input('language');
@@ -70,6 +71,7 @@ class MovieController extends Controller
         //Atualiza um registro de um filme no banco
         $movie = Movie::findOrFail($id);
         $movie->title = $request->input('title');
+        $movie->director = $request->input('director');
         $movie->description = $request->input('description');
         $movie->duration = $request->input('duration');
         $movie->language = $request->input('language');
