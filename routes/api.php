@@ -19,8 +19,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('buscatodosfilme', [MovieController::class, 'index']);
-Route::get('buscaumfilme/{id}', [MovieController::class, 'show']);
-Route::post('cadastrafilme', [MovieController::class, 'store']);
-Route::put('atualizafilme/{id}', [MovieController::class, 'update']);
-Route::delete('excluifilme/{id}', [MovieController::class, 'destroy']);
+
+Route::prefix('filmes')->group(function () {
+    Route::get('buscatodos', [MovieController::class, 'index']);
+    Route::get('busca/{id}', [MovieController::class, 'show']);
+    Route::post('cadastra', [MovieController::class, 'store']);
+    Route::put('atualiza/{id}', [MovieController::class, 'update']);
+    Route::delete('exclui/{id}', [MovieController::class, 'destroy']);
+});
