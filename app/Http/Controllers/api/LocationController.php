@@ -40,6 +40,7 @@ class LocationController extends Controller
         $location->state = $request->input('state');
         $location->zipcode = $request->input('zipcode');
         $location->observation = $request->input('observation');
+        $location->save();
 
         return new LocationResource($location);
     }
