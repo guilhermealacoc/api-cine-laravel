@@ -1,11 +1,11 @@
 # Api gerenciamento de cinema
   API desenvolvida com a finalidade de estudo.
   Tópicos desenvolvidos:
-  ⋅⋅* Laravel
-  ⋅⋅* Eloquent
-  ⋅⋅* Rest
-  ⋅⋅* Testes
-  ⋅⋅* SOLID
+  * Laravel
+  * Eloquent
+  * Rest
+  * Testes
+  * SOLID
 
 # Esboço do banco diagrama do banco de dados
 <div align="center">
