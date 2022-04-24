@@ -36,3 +36,11 @@ Route::prefix('location')->group(function () {
     Route::put('atualiza/{id}', [LocationController::class, 'update']);
     Route::delete('exclui/{id}', [LocationController::class, 'destroy']);
 });
+
+Route::prefix('cinema')->group(function () {
+    //Route::get('buscatodos', [LocationController::class, 'index']);
+    //Route::get('busca/{id}', [LocationController::class, 'show']);
+    Route::post('cadastra', [LocationController::class, 'store']);
+    //Route::put('atualiza/{id}', [LocationController::class, 'update']);
+    //Route::delete('exclui/{id}', [LocationController::class, 'destroy']);
+});

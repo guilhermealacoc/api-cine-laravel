@@ -5,6 +5,9 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Models\Cinema;
+use App\Http\Resource\Cinema as CinemaResource;
+
 class CinemaController extends Controller
 {
     /**
@@ -14,7 +17,9 @@ class CinemaController extends Controller
      */
     public function index()
     {
-        //
+        //Retorna um cinema cadastrado
+        $cinema = Cinema::all();
+        return new CinemaResource($cinema);
     }
 
     /**
@@ -25,7 +30,11 @@ class CinemaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Faz um registro de um cinema
+        $cinema = new Cinema();
+        $cinema->name = $request->input('name');
+        $cinema->name = $request->input('movie_theaters');
+        $cinema->name = $request->input('location_id');
     }
 
     /**
@@ -36,7 +45,7 @@ class CinemaController extends Controller
      */
     public function show($id)
     {
-        //
+        //Retorna somente 
     }
 
     /**
