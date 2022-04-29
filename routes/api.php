@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\MovieController;
 use App\Http\Controllers\api\LocationController;
+use App\Http\Controllers\api\CinemaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +41,7 @@ Route::prefix('location')->group(function () {
 Route::prefix('cinema')->group(function () {
     //Route::get('buscatodos', [LocationController::class, 'index']);
     //Route::get('busca/{id}', [LocationController::class, 'show']);
-    Route::post('cadastra', [LocationController::class, 'store']);
+    Route::post('cadastra', [CinemaController::class, 'store']);
     //Route::put('atualiza/{id}', [LocationController::class, 'update']);
     //Route::delete('exclui/{id}', [LocationController::class, 'destroy']);
 });

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Cinema;
-use App\Http\Resource\Cinema as CinemaResource;
+use App\Http\Resources\Cinema as CinemaResource;
 
 class CinemaController extends Controller
 {
@@ -33,8 +33,8 @@ class CinemaController extends Controller
         //Faz um registro de um cinema
         $cinema = new Cinema();
         $cinema->name = $request->input('name');
-        $cinema->name = $request->input('movie_theaters');
-        $cinema->name = $request->input('location_id');
+        $cinema->movie_theaters = $request->input('movie_theaters');
+        $cinema->location_id = $request->input('location_id');
         $cinema->save();
         
         return new CinemaResource($cinema);
