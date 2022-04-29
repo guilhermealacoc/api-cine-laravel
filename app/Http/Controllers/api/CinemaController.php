@@ -35,6 +35,9 @@ class CinemaController extends Controller
         $cinema->name = $request->input('name');
         $cinema->name = $request->input('movie_theaters');
         $cinema->name = $request->input('location_id');
+        $cinema->save();
+        
+        return new CinemaResource($cinema);
     }
 
     /**
